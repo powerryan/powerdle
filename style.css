@@ -1,0 +1,221 @@
+body {
+  text-align: center;
+  background-color: #fff;
+}
+.wrapper{
+  margin-top: 50px;
+}
+.col-sm {
+  padding: 0px;
+  margin: 4px;
+}
+.word {
+  width: 90%;
+  height: 72.8px;
+  margin: auto;
+}
+
+.answer {
+ margin: auto;
+   text-align: center;
+   vertical-align: middle;
+}
+
+.output{
+  line-height: 45px;
+  overflow: auto;
+  white-space: nowrap;
+  visibility:hidden;
+  outline: none;
+  border: 2px solid #007bff;
+  font-weight: bold;
+  font-size: 1rem;
+  color: rgb(40, 167, 69);
+  border-radius: 10px;
+  display: inline-block;
+  width: 350px;
+  height: 50px;
+  text-align: center;
+  margin: auto;
+  background-color: #fff;
+}
+.primary {
+  color: #007bff;
+  border: 2px solid;
+  border-color: #007bff;
+  font-weight: bold;
+  margin: 10px;
+}
+.primary:hover {
+  background-color: #007bff;
+  color: #000;
+  border-color: #007bff;
+}
+.letter {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #007bff;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #111;
+  border-radius: 10px;
+  height: 100% !important;
+
+  text-align: center;
+  background-color: 333;
+  padding: 0px;
+}
+.wordToGuess {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid #40994B;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #111;
+  border-radius: 10px;
+  height: 100% !important;
+
+  text-align: center;
+  background-color: 333;
+  padding: 0px;
+}
+.AC{
+  font-size: 1.2rem;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+@media only screen and (max-width: 576px) {
+  .word {
+    visibility: hidden;
+  }
+  .col-sm {
+    visibility: hidden;
+  }
+  .letter {
+    visibility: hidden;
+  }
+  .primary {
+    visibility: hidden;
+  }
+
+  .output{
+    visibility: hidden;
+  }
+}
+.header{
+  font-family: 'Roboto Slab', serif;
+  font-size: 3rem;
+}
+.buttons {
+  max-width: 30%;
+  height: 4rem;
+  justify-content: center !important;
+  margin: auto;
+}
+
+.keyboard {
+  font-size: 2.7rem;
+  font-weight: bold;
+  background-color: #000;
+  border-radius: 10px;
+  color: #fff;
+}
+@media only screen and (max-width: 1000px) {
+  .word {
+    width: 80% !important;
+    height: 72.8px !important;
+  }
+  .col-sm {
+    padding: 0px;
+    margin: 8px;
+  }
+  .letter {
+    height: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: 5px solid;
+    border-color: #007bff;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 18px;
+    text-align: center;
+    background-color: 111;
+    padding: 0px;
+    vertical-align: middle;
+  }
+  .primary {
+    color: #007bff;
+    border: 5px solid;
+    border-radius: 18px;
+    border-color: #007bff;
+    font-weight: bold;
+    margin: 3rem;
+    height: 6rem;
+    width: 28rem;
+    font-size: 3rem;
+  }
+  .primary:hover {
+    background-color: #007bff;
+    color: #000;
+    border-color: #007bff;
+  }
+  .newGame {
+    color: #40994B;
+    border: 5px solid;
+    border-radius: 18px;
+    border-color: #40994B;
+    font-weight: bold;
+    margin: 3rem;
+    height: 6rem;
+    width: 28rem;
+    font-size: 3rem;
+  }
+  .newGame:hover {
+    background-color: #40994B;
+    color: #000;
+    border-color: #40994B;
+  }
+  .output{
+    line-height: 5rem;
+    overflow: auto;
+    white-space: nowrap;
+    visibility:hidden;
+    outline: none;
+    border: 5px solid #007bff;
+    font-size: 3rem;
+    color: rgb(51, 153, 51);
+    border-radius: 18px;
+    display: inline-block;
+    width: 80%;
+    height: 6rem;
+    text-align: center;
+    margin: auto;
+    background-color: black;
+  }
+}

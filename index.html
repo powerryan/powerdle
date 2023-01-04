@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>POWERDLE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+</head>
+
+<body>
+<input type="text" style="display:none;" />
+<br />
+<br />
+<h1 class="header">POWERDLE</h1>
+
+<div class="new" id="play" style="margin-top: 100px; display:block">
+
+<div class="word row" >
+  <div class="col-sm" ><div ></div></div>
+  <div class="col-sm" ><div ></div></div>
+  <div class="col-sm" ><div ></div></div>
+  <div class="col-sm" ><div ></div></div>
+  <div class="col-sm" ><div ></div></div>
+  <div class="col-sm" id="one"><div class="wordToGuess"></div></div>
+  <div class="col-sm" id="two"><div class="wordToGuess"></div></div>
+  <div class="col-sm" id="three"><div class="wordToGuess"></div></div>
+  <div class="col-sm" id="four"><div class="wordToGuess"></div></div>
+  <div class="col-sm" id="five"><div class="wordToGuess"></div></div>
+  <div class="col-sm" ><div ></div></div>
+  <div class="col-sm" ><div ></div></div>
+  <div class="col-sm" ><div ></div></div>
+  <div class="col-sm" ><div ></div></div>
+  <div class="col-sm" ><div ></div></div>
+</div>
+<br />
+<button id="answer" class="btn btn-lg btn-success newGame" onClick="playGame()">Play</button>
+</div>
+<div class="wrapper" id="board" style="display:none;">
+  <div class="word row">
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" id="one"><div class="letter"></div></div>
+    <div class="col-sm" id="two"><div class="letter"></div></div>
+    <div class="col-sm" id="three"><div class="letter"></div></div>
+    <div class="col-sm" id="four"><div class="letter"></div></div>
+    <div class="col-sm" id="five"><div class="letter"></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+  </div>
+  <div class="word row">
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" id="one"><div class="letter"></div></div>
+    <div class="col-sm" id="two"><div class="letter"></div></div>
+    <div class="col-sm" id="three"><div class="letter"></div></div>
+    <div class="col-sm" id="four"><div class="letter"></div></div>
+    <div class="col-sm" id="five"><div class="letter"></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+  </div>
+  <div class="word row">
+    <div class="col-sm" ><div id="Q" class="keyboard">Q</div></div>
+    <div class="col-sm" ><div id="W"class="keyboard">W</div></div>
+    <div class="col-sm" ><div id="E"class="keyboard">E</div></div>
+    <div class="col-sm" ><div id="R"class="keyboard">R</div></div>
+    <div class="col-sm" ><div id="T"class="keyboard">T</div></div>
+    <div class="col-sm" id="one"><div class="letter"></div></div>
+    <div class="col-sm" id="two"><div class="letter"></div></div>
+    <div class="col-sm" id="three"><div class="letter"></div></div>
+    <div class="col-sm" id="four"><div class="letter"></div></div>
+    <div class="col-sm" id="five"><div class="letter"></div></div>
+    <div class="col-sm" ><div id="Y"class="keyboard">Y</div></div>
+    <div class="col-sm" ><div id="U"class="keyboard">U</div></div>
+    <div class="col-sm" ><div id="I"class="keyboard">I</div></div>
+    <div class="col-sm" ><div id="O"class="keyboard">O</div></div>
+    <div class="col-sm" ><div id="P"class="keyboard">P</div></div>
+  </div>
+  <div class="word row">
+    <div class="col-sm" ><div id="A"class="keyboard">A</div></div>
+    <div class="col-sm" ><div id="S"class="keyboard">S</div></div>
+    <div class="col-sm" ><div id="D"class="keyboard">D</div></div>
+    <div class="col-sm" ><div id="F"class="keyboard">F</div></div>
+    <div class="col-sm" ><div id="G"class="keyboard">G</div></div>
+    <div class="col-sm" id="one"><div class="letter"></div></div>
+    <div class="col-sm" id="two"><div class="letter"></div></div>
+    <div class="col-sm" id="three"><div class="letter"></div></div>
+    <div class="col-sm" id="four"><div class="letter"></div></div>
+    <div class="col-sm" id="five"><div class="letter"></div></div>
+    <div class="col-sm" ><div id="H"class="keyboard">H</div></div>
+    <div class="col-sm" ><div id="J"class="keyboard">J</div></div>
+    <div class="col-sm" ><div id="K"class="keyboard">K</div></div>
+    <div class="col-sm" ><div id="L"class="keyboard">L</div></div>
+    <div class="col-sm" ><div ></div></div>
+  </div>
+  <div class="word row">
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div id="Z"class="keyboard">Z</div></div>
+    <div class="col-sm" ><div id="X"class="keyboard">X</div></div>
+    <div class="col-sm" ><div id="C"class="keyboard">C</div></div>
+    <div class="col-sm" ><div id="V" class="keyboard">V</div></div>
+    <div class="col-sm" id="one"><div class="letter"></div></div>
+    <div class="col-sm" id="two"><div class="letter"></div></div>
+    <div class="col-sm" id="three"><div class="letter"></div></div>
+    <div class="col-sm" id="four"><div class="letter"></div></div>
+    <div class="col-sm" id="five"><div class="letter"></div></div>
+    <div class="col-sm" ><div id="B"class="keyboard">B</div></div>
+    <div class="col-sm" ><div id="N"class="keyboard">N</div></div>
+    <div class="col-sm" ><div id="M"class="keyboard">M</div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+  </div>
+  <div class="word row">
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" id="one"><div class="letter"></div></div>
+    <div class="col-sm" id="two"><div class="letter"></div></div>
+    <div class="col-sm" id="three"><div class="letter"></div></div>
+    <div class="col-sm" id="four"><div class="letter"></div></div>
+    <div class="col-sm" id="five"><div class="letter"></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+    <div class="col-sm" ><div ></div></div>
+  </div>
+
+  <div class="buttons row">
+    <button id="answer" class="col-sm btn btn-primary" onClick="newGame()">New Game</button>
+    <button id="answer" class="col-sm btn btn-success" onClick="guessWord()">Guess</button>
+  </div>
+  </div>
+  <script src="words.js" charset="utf-8"></script>
+  <script src="solver.js" charset="utf-8"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
